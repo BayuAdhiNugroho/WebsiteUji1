@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="#" class="logo">Portfolio.</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button id="darkModeToggle">Mode Malam</button>
+    </nav>
+
+    <section id="home" class="home">
+        <div class="home-content">
+            <div class="profile-image">
+                <img src="L200230210.jpg" alt="">
+            </div>
+            <h1>Hi, I'm Bayu Adhi Nugroho</h1>
+            <h3>Informatics Engginering Student</h3>
+            <p>Welcome to my portfolio website. I showcase my skills and projects here.</p>
+            <a href="about.html" class="btn" >About Me</a>
+        </div>
+    </section>
+    <aside class="skills">
+        <h3>Skills</h3>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>Python</li>
+        </ul>
+        
+    </aside>
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        const enableDarkMode = () => {
+            body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        };
+
+        const disableDarkMode = () => {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+        };
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            enableDarkMode();
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        });
+    </script>
+
+
+    <footer>
+        <p>&copy; 2025 Bayu Adhi Nugroho | Informatics Engginering</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
